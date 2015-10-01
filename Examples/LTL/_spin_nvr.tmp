@@ -1,0 +1,9 @@
+never invariant {    /* !([] ((! ((P@CS))) || ((mutex==1)))) */
+T0_init:
+	do
+	:: atomic { (! (((! ((P@CS))) || ((mutex==1))))) -> assert(!(! (((! ((P@CS))) || ((mutex==1)))))) }
+	:: (1) -> goto T0_init
+	od;
+accept_all:
+	skip
+}
